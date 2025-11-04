@@ -1,32 +1,32 @@
 import { Target, Eye, History, Users } from 'lucide-react';
-import SectionHeader from '../components/SectionHeader';
 
-const leadership = [
-  {
-    name: 'Dr. Kwame Mensah',
-    position: 'Headmaster',
-    image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
-    bio: 'Over 20 years of experience in educational leadership'
-  },
-  {
-    name: 'Mrs. Ama Boateng',
-    position: 'Deputy Headmistress',
-    image: 'https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=400',
-    bio: 'Specialist in curriculum development and teacher training'
-  },
-  {
-    name: 'Mr. Kofi Asante',
-    position: 'Academic Coordinator',
-    image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
-    bio: 'Expert in educational technology and innovation'
-  },
-  {
-    name: 'Ms. Akua Owusu',
-    position: 'Student Affairs Director',
-    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400',
-    bio: 'Dedicated to student welfare and development'
-  }
-];
+// Temporarily disabled until leadership information is provided by the school
+// const leadership = [
+//   {
+//     name: 'Dr. Kwame Mensah',
+//     position: 'Headmaster',
+//     image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+//     bio: 'Over 20 years of experience in educational leadership'
+//   },
+//   {
+//     name: 'Mrs. Ama Boateng',
+//     position: 'Deputy Headmistress',
+//     image: 'https://images.pexels.com/photos/3762800/pexels-photo-3762800.jpeg?auto=compress&cs=tinysrgb&w=400',
+//     bio: 'Specialist in curriculum development and teacher training'
+//   },
+//   {
+//     name: 'Mr. Kofi Asante',
+//     position: 'Academic Coordinator',
+//     image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
+//     bio: 'Expert in educational technology and innovation'
+//   },
+//   {
+//     name: 'Ms. Akua Owusu',
+//     position: 'Student Affairs Director',
+//     image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400',
+//     bio: 'Dedicated to student welfare and development'
+//   }
+// ];
 
 export default function About() {
   return (
@@ -108,6 +108,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* Leadership section temporarily hidden until official data is available
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -140,6 +141,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      */}
 
       <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

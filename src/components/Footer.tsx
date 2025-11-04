@@ -39,7 +39,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-tomato-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">123 Education Street, Accra, Ghana</span>
+                <span className="text-gray-300">Antiaku-Laststop, Accra, Ghana</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-tomato-400 flex-shrink-0" />
