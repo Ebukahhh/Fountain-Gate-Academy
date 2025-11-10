@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import contactusImage from '../assets/images/contactus.jpeg';
 
@@ -87,9 +87,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-bold text-royal-800 mb-2">Address</h3>
                       <p className="text-gray-700">
-                        123 Education Street<br />
-                        East Legon, Accra<br />
-                        Ghana
+                      Antiaku-Laststop, Accra, Ghana
                       </p>
                     </div>
                   </div>
@@ -100,8 +98,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-tomato-800 mb-2">Phone</h3>
-                      <p className="text-gray-700">+233 24 123 4567</p>
-                      <p className="text-gray-700">+233 30 456 7890</p>
+                      <p className="text-gray-700">0244588375</p>
                     </div>
                   </div>
 
@@ -123,8 +120,8 @@ export default function Contact() {
                     <div>
                       <h3 className="font-bold text-tomato-800 mb-2">School Hours</h3>
                       <p className="text-gray-700">Monday - Friday</p>
-                      <p className="text-gray-700">7:30 AM - 3:00 PM</p>
-                      <p className="text-gray-700 text-sm mt-2">Office Hours: 8:00 AM - 4:00 PM</p>
+                      <p className="text-gray-700">7:00 AM - 3:15 PM</p>
+                      <p className="text-gray-700 text-sm mt-2">Office Hours: 7:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                 </div>
@@ -133,29 +130,26 @@ export default function Contact() {
                   <h3 className="font-bold text-royal-800 mb-4 text-xl">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://web.facebook.com/THEGREATFOGA#"
                       className="bg-royal-600 hover:bg-royal-700 p-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg"
                     >
                       <Facebook className="w-6 h-6 text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.tiktok.com/@fountain_foga?_r=1&_t=ZM-91HqHjBQVse"
                       className="bg-royal-600 hover:bg-royal-700 p-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg"
                     >
-                      <Twitter className="w-6 h-6 text-white" />
+                      <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                      </svg>
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/fountain_foga?igsh=MXd3OHNxM285bDNpeA%3D%3D&utm_source=qr"
                       className="bg-royal-600 hover:bg-royal-700 p-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg"
                     >
                       <Instagram className="w-6 h-6 text-white" />
                     </a>
-                    <a
-                      href="#"
-                      className="bg-royal-600 hover:bg-royal-700 p-4 rounded-xl transition-all duration-300 hover:scale-110 shadow-lg"
-                    >
-                      <Youtube className="w-6 h-6 text-white" />
-                    </a>
+
                   </div>
                 </div>
               </div>

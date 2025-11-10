@@ -23,7 +23,6 @@ const programs = [
     ],
     curriculum: [
       'Basic communication and language development',
-      'Fine and gross motor skills',
       'Social and emotional development',
       'Creative arts and music',
       'Sensory exploration activities'
@@ -75,17 +74,42 @@ const programs = [
   },
   {
     icon: BookOpen,
-    title: 'Primary School (Classes 1-6)',
-    color: 'from-royal-500 to-blue-600',
-    bgColor: 'from-royal-50 to-blue-50',
+    title: 'Lower Primary (Classes 1-3)',
+    color: 'from-purple-500 to-indigo-600',
+    bgColor: 'from-purple-50 to-indigo-50',
     description: 'Building strong foundations in core subjects',
+    breakTime: '9:45 AM - 10:25 AM',
     features: [
-      'Comprehensive curriculum covering all subjects',
-      'Experienced and qualified teachers',
+      'Foundation building in reading, writing, and arithmetic',
+      'Hands-on learning activities and interactive lessons',
       'Small class sizes for personalized attention',
-      'Modern teaching methods and resources',
-      'Regular assessments and progress reports',
-      'Extracurricular activities and clubs'
+      'Phonics and early literacy development',
+      'Basic numeracy and problem-solving skills',
+      'Character building and moral education'
+    ],
+    curriculum: [
+      'English Language and Literacy',
+      'Mathematics and Numeracy',
+      'Science and Technology',
+      'Social Studies',
+      'Religious and Moral Education',
+      'Creative Arts, Music, and Physical Education'
+    ]
+  },
+  {
+    icon: BookOpen,
+    title: 'Upper Primary (Classes 4-6)',
+    color: 'from-teal-500 to-cyan-600',
+    bgColor: 'from-teal-50 to-cyan-50',
+    description: 'Advancing knowledge and preparing for JHS',
+    breakTime: '10:00 AM - 10:25 AM',
+    features: [
+      'Advanced curriculum preparing for JHS transition',
+      'Critical thinking and analytical skills development',
+      'Research and project-based learning',
+      'Enhanced subject specialization',
+      'BECE preparation and mock examinations',
+      'Leadership opportunities and student council participation'
     ],
     curriculum: [
       'English Language and Literacy',
@@ -112,9 +136,8 @@ const programs = [
     ],
     curriculum: [
       'Core subjects: English, Mathematics, Science, Social Studies',
-      'Elective subjects: Visual Arts, ICT, French, etc.',
+      'Elective subjects: Visual Arts, ICT, Twi, etc.',
       'Technical and Vocational Skills',
-      'Life Skills Education',
       'BECE examination preparation',
       'Project work and research skills'
     ]
@@ -259,9 +282,9 @@ export default function Academics() {
                       <div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
                         <h4 className="font-bold text-royal-700 mb-3">Class Schedule</h4>
                         <div className="space-y-2 text-gray-700">
-                          <p><span className="font-semibold">School Hours:</span> 7:30 AM - 3:00 PM</p>
-                          <p><span className="font-semibold">Break Time:</span> 10:00 AM - 10:30 AM</p>
-                          <p><span className="font-semibold">Lunch:</span> 12:30 PM - 1:30 PM</p>
+                          <p><span className="font-semibold">School Hours:</span> 7:00 AM - 3:15 PM</p>
+                          <p><span className="font-semibold">Break Time:</span> {program.breakTime || '9:45 AM - 10:25 AM'}</p>
+                          <p><span className="font-semibold">Lunch:</span> 12:45 PM - 1:30 PM</p>
                         </div>
                       </div>
                     </div>
@@ -319,7 +342,7 @@ export default function Academics() {
                 <p className="text-gray-200">Category A Schools</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                <p className="text-5xl font-bold text-tomato-400 mb-2">50+</p>
+                <p className="text-5xl font-bold text-tomato-400 mb-2">10+</p>
                 <p className="text-gray-200">Awards Won</p>
               </div>
             </div>

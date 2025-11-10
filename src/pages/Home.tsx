@@ -5,6 +5,7 @@ import SectionHeader from '../components/SectionHeader';
 import bg1 from '../assets/images/bg1.jpeg';
 import bg2 from '../assets/images/bg2.jpeg';
 import bg3 from '../assets/images/bg3.jpeg';
+import welcomeImage from '../assets/images/welcome.jpeg';
 
 const carouselImages = [
   {
@@ -149,7 +150,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-slide-up">
               <img
-                src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={welcomeImage}
                 alt="Students learning"
                 className="rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
               />
