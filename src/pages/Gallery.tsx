@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Image as ImageIcon, Video, X } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import { supabase } from '../lib/supabase';
+import gallery1 from '../assets/images/gallery1.jpeg';
+import gallery2 from '../assets/images/gallery2.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -48,13 +50,24 @@ export default function Gallery() {
 
   return (
     <div className="animate-fade-in">
-      <div className="relative h-[300px] overflow-hidden">
+      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
-        <img
-          src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Gallery at Fountain Gate Academy"
-          className="w-full h-full object-cover"
-        />
+        <div className="grid grid-cols-2 gap-1 h-full">
+          <div>
+            <img
+              src={gallery1}
+              alt="Gallery at Fountain Gate Academy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src={gallery2}
+              alt="Gallery at Fountain Gate Academy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-4xl animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Gallery</h1>

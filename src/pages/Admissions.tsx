@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FileText, CheckCircle, Calendar, UserPlus, Download, Phone, Mail } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import { supabase } from '../lib/supabase';
+import admissionImage from '../assets/images/admission.jpeg';
 
 const admissionSteps = [
   {
@@ -98,7 +99,7 @@ export default function Admissions() {
       <div className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
         <img
-          src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src={admissionImage}
           alt="Admissions at Fountain Gate Academy"
           className="w-full h-full object-cover"
         />

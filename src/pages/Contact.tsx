@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import contactusImage from '../assets/images/contactus.jpeg';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -54,9 +55,15 @@ export default function Contact() {
 
   return (
     <div className="animate-fade-in">
-      <div className="bg-gradient-to-br from-royal-700 to-royal-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-slide-up">
+      <div className="relative h-[300px] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
+        <img
+          src={contactusImage}
+          alt="Contact Us at Fountain Gate Academy"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-4xl animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Get in touch with us for inquiries, visits, or any questions you may have about our programs from Creche to JHS (ages 1 year and above)

@@ -1,4 +1,5 @@
 import { Target, Eye, History, Users } from 'lucide-react';
+import about1 from '../assets/images/about1.jpeg';
 
 // Temporarily disabled until leadership information is provided by the school
 // const leadership = [
@@ -34,7 +35,7 @@ export default function About() {
       <div className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
         <img
-          src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src={about1}
           alt="About Fountain Gate Academy"
           className="w-full h-full object-cover"
         />
@@ -57,10 +58,7 @@ export default function About() {
               </div>
               <h2 className="text-3xl font-bold text-royal-800 mb-4">Our Mission</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                To provide quality, affordable, and accessible education that nurtures academic excellence,
-                character development, and leadership skills in every child. We are committed to creating
-                a safe, supportive learning environment where students develop into well-rounded individuals
-                prepared for the challenges of tomorrow.
+              To Holistically Equip The Next Generation Of Leaders With Hard work, Innovation, Confidence And Above All The Fear Of God.
               </p>
             </div>
 
@@ -70,9 +68,7 @@ export default function About() {
               </div>
               <h2 className="text-3xl font-bold text-tomato-800 mb-4">Our Vision</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                To be the leading basic school in Ghana, recognized for academic excellence, moral integrity,
-                and holistic child development. We envision a future where every Fountain Gate Academy graduate
-                becomes a responsible citizen, critical thinker, and positive contributor to society.
+              To Become A Household Name In The Provision Of Quality And Affordable Education In Ghana.
               </p>
             </div>
           </div>
