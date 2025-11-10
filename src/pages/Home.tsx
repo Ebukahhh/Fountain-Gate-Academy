@@ -2,22 +2,25 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, BookOpen, Users, Award, Heart } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
+import bg1 from '../assets/images/bg1.jpeg';
+import bg2 from '../assets/images/bg2.jpeg';
+import bg3 from '../assets/images/bg3.jpeg';
 
 const carouselImages = [
   {
-    url: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    url: bg1,
     title: 'Quality Education',
     description: 'Excellence in learning from Creche to JHS'
   },
   {
-    url: 'https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    url: bg2,
     title: 'Modern Facilities',
     description: 'State-of-the-art learning environment'
   },
   {
-    url: 'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    url: bg3,
     title: 'Holistic Development',
-    description: 'Nurturing minds, building character'
+    description: 'Jesus is the Answer'
   }
 ];
 
@@ -89,7 +92,7 @@ export default function Home() {
                   Welcome to Fountain Gate Academy
                 </h1>
                 <p className="text-xl md:text-2xl mb-4 text-tomato-300 font-semibold">
-                  Nurturing Minds, Building Character
+                  Jesus is the Answer
                 </p>
                 <p className="text-lg md:text-xl mb-8 text-gray-200">
                   {image.description}
@@ -168,7 +171,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="bg-royal-50 px-6 py-3 rounded-xl border-2 border-royal-200">
-                  <p className="text-2xl font-bold text-royal-700">15+</p>
+                  <p className="text-2xl font-bold text-royal-700">5+</p>
                   <p className="text-sm text-gray-600">Years of Excellence</p>
                 </div>
                 <div className="bg-tomato-50 px-6 py-3 rounded-xl border-2 border-tomato-200">

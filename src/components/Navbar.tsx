@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,12 +36,14 @@ export default function Navbar() {
             className="flex items-center space-x-3 cursor-pointer group"
             onClick={() => handleNavClick('/')}
           >
-            <div className="bg-gradient-to-br from-royal-600 to-royal-700 p-3 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-              <GraduationCap className="w-8 h-8 text-white" />
-            </div>
+            <img 
+              src={logo} 
+              alt="Fountain Gate Academy Logo" 
+              className="w-16 h-16 md:w-20 md:h-20 object-contain group-hover:scale-110 transition-transform duration-300" 
+            />
             <div>
               <h1 className="text-xl font-bold text-royal-700">Fountain Gate Academy</h1>
-              <p className="text-xs text-tomato-600 font-semibold">Nurturing Minds, Building Character (Ages 1+)</p>
+              <p className="text-xs text-tomato-600 font-semibold">Jesus is the Answer</p>
             </div>
           </div>
 
