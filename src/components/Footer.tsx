@@ -43,11 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-tomato-400 flex-shrink-0" />
-                <span className="text-gray-300">Ablohman : 0544075458</span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-tomato-400 flex-shrink-0" />
-                <span className="text-gray-300">Santa Maria: 026 237 4192</span>
+                <span className="text-gray-300">0244588375</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-tomato-400 flex-shrink-0" />
@@ -89,7 +85,7 @@ export default function Footer() {
             <div className="mt-6">
               <h5 className="text-sm font-semibold mb-2 text-tomato-400">School Hours</h5>
               <p className="text-gray-300 text-sm">Monday - Friday</p>
-              <p className="text-gray-300 text-sm">7:30 AM - 3:00 PM</p>
+              <p className="text-gray-300 text-sm">7:00 AM - 3:15 PM</p>
             </div>
           </div>
         </div>

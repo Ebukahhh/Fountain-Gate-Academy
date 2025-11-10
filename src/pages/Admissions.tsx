@@ -38,21 +38,58 @@ const requirements = [
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
-    parentName: '',
-    email: '',
-    phone: '',
-    studentName: '',
-    studentAge: '',
-    gradeLevel: '',
-    message: ''
+    // Pupil's Personal Details
+    surname: '',
+    otherNames: '',
+    namesUsedAtHome: '',
+    dateOfBirth: '',
+    homeTown: '',
+    motherTongue: '',
+    
+    // Parent/Guardian Information
+    fatherName: '',
+    fatherOccupation: '',
+    motherName: '',
+    motherOccupation: '',
+    guardian: '',
+    guardianOccupation: '',
+    address: '',
+    fatherNumber: '',
+    motherNumber: '',
+    
+    // Educational History
+    school1: '',
+    class1: '',
+    school2: '',
+    class2: '',
+    school3: '',
+    class3: '',
+    formerClass: '',
+    presentClass: '',
+    
+    // Child's Living Arrangement
+    livingWith: 'bothParents', // 'bothParents', 'mother', 'father', 'guardian'
+    
+    // Medical Information
+    medicalProblems: '',
+    
+    // Agreement
+    agreedToTerms: false,
+    
+    // Signature
+    signature: '',
+    date: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: type === 'checkbox' ? checked : value
     });
   };
 
@@ -64,30 +101,86 @@ export default function Admissions() {
     try {
       const { error } = await supabase.from('admission_inquiries').insert([
         {
-          parent_name: formData.parentName,
-          email: formData.email,
-          phone: formData.phone,
-          student_name: formData.studentName,
-          student_age: formData.studentAge,
-          grade_level: formData.gradeLevel,
-          message: formData.message
+          // Pupil's Personal Details
+          surname: formData.surname,
+          other_names: formData.otherNames,
+          names_used_at_home: formData.namesUsedAtHome,
+          date_of_birth: formData.dateOfBirth,
+          home_town: formData.homeTown,
+          mother_tongue: formData.motherTongue,
+          
+          // Parent/Guardian Information
+          father_name: formData.fatherName,
+          father_occupation: formData.fatherOccupation,
+          mother_name: formData.motherName,
+          mother_occupation: formData.motherOccupation,
+          guardian: formData.guardian,
+          guardian_occupation: formData.guardianOccupation,
+          address: formData.address,
+          father_number: formData.fatherNumber,
+          mother_number: formData.motherNumber,
+          
+          // Educational History
+          school1: formData.school1,
+          class1: formData.class1,
+          school2: formData.school2,
+          class2: formData.class2,
+          school3: formData.school3,
+          class3: formData.class3,
+          former_class: formData.formerClass,
+          present_class: formData.presentClass,
+          
+          // Child's Living Arrangement
+          living_with: formData.livingWith,
+          
+          // Medical Information
+          medical_problems: formData.medicalProblems,
+          
+          // Agreement
+          agreed_to_terms: formData.agreedToTerms,
+          
+          // Signature
+          signature: formData.signature,
+          date: formData.date
         }
       ]);
 
       if (error) throw error;
 
       setSubmitStatus('success');
+      // Reset form
       setFormData({
-        parentName: '',
-        email: '',
-        phone: '',
-        studentName: '',
-        studentAge: '',
-        gradeLevel: '',
-        message: ''
+        surname: '',
+        otherNames: '',
+        namesUsedAtHome: '',
+        dateOfBirth: '',
+        homeTown: '',
+        motherTongue: '',
+        fatherName: '',
+        fatherOccupation: '',
+        motherName: '',
+        motherOccupation: '',
+        guardian: '',
+        guardianOccupation: '',
+        address: '',
+        fatherNumber: '',
+        motherNumber: '',
+        school1: '',
+        class1: '',
+        school2: '',
+        class2: '',
+        school3: '',
+        class3: '',
+        formerClass: '',
+        presentClass: '',
+        livingWith: 'bothParents',
+        medicalProblems: '',
+        agreedToTerms: false,
+        signature: '',
+        date: ''
       });
     } catch (error) {
-      console.error('Error submitting inquiry:', error);
+      console.error('Error submitting registration:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -172,147 +265,426 @@ export default function Admissions() {
 
             <div className="animate-fade-in">
               <div className="bg-white border-2 border-royal-200 rounded-3xl shadow-lg p-8">
-                <h2 className="text-3xl font-bold text-royal-800 mb-6">Admission Inquiry Form</h2>
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl font-bold text-royal-800 mb-2">PUPILS REGISTRATION FORM</h2>
+                  <p className="text-lg text-gray-600">FOUNTAIN GATE ACADEMY</p>
+                  <p className="text-sm text-gray-500">GHANA EDUCATION SERVICE</p>
+                </div>
 
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border-2 border-green-500 text-green-700 p-4 rounded-xl mb-6 flex items-center">
                     <CheckCircle className="w-6 h-6 mr-3 flex-shrink-0" />
-                    <p>Thank you! Your inquiry has been submitted successfully. We will contact you soon.</p>
+                    <p>Thank you! Your registration form has been submitted successfully. We will contact you soon.</p>
                   </div>
                 )}
 
                 {submitStatus === 'error' && (
                   <div className="bg-red-50 border-2 border-red-500 text-red-700 p-4 rounded-xl mb-6">
-                    <p>Sorry, there was an error submitting your inquiry. Please try again.</p>
+                    <p>Sorry, there was an error submitting your registration. Please try again.</p>
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      Parent/Guardian Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="parentName"
-                      value={formData.parentName}
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {/* Pupil's Personal Details */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <h3 className="text-xl font-bold text-royal-800 mb-4">Pupil's Personal Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">SURNAME *</label>
+                        <input
+                          type="text"
+                          name="surname"
+                          value={formData.surname}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">OTHER NAMES *</label>
+                        <input
+                          type="text"
+                          name="otherNames"
+                          value={formData.otherNames}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">NAMES USED FOR THE CHILD AT HOME</label>
+                        <input
+                          type="text"
+                          name="namesUsedAtHome"
+                          value={formData.namesUsedAtHome}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">DATE OF BIRTH *</label>
+                        <input
+                          type="date"
+                          name="dateOfBirth"
+                          value={formData.dateOfBirth}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">HOME TOWN</label>
+                        <input
+                          type="text"
+                          name="homeTown"
+                          value={formData.homeTown}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">MOTHER TONGUE</label>
+                        <input
+                          type="text"
+                          name="motherTongue"
+                          value={formData.motherTongue}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Parent/Guardian Information */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <h3 className="text-xl font-bold text-royal-800 mb-4">Parent/Guardian Information</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S NAME</label>
+                        <input
+                          type="text"
+                          name="fatherName"
+                          value={formData.fatherName}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S OCCUPATION</label>
+                        <input
+                          type="text"
+                          name="fatherOccupation"
+                          value={formData.fatherOccupation}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S NAME</label>
+                        <input
+                          type="text"
+                          name="motherName"
+                          value={formData.motherName}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S OCCUPATION</label>
+                        <input
+                          type="text"
+                          name="motherOccupation"
+                          value={formData.motherOccupation}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">GUARDIAN</label>
+                        <input
+                          type="text"
+                          name="guardian"
+                          value={formData.guardian}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">GUARDIAN OCCUPATION</label>
+                        <input
+                          type="text"
+                          name="guardianOccupation"
+                          value={formData.guardianOccupation}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        />
+                      </div>
+                      <div className="md:col-span-2">
+                        <label className="block text-gray-700 font-semibold mb-2">ADDRESS *</label>
+                        <textarea
+                          name="address"
+                          value={formData.address}
+                          onChange={handleChange}
+                          required
+                          rows={2}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S NUMBER</label>
+                        <input
+                          type="tel"
+                          name="fatherNumber"
+                          value={formData.fatherNumber}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          placeholder="e.g., 0500000477"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S NUMBER</label>
+                        <input
+                          type="tel"
+                          name="motherNumber"
+                          value={formData.motherNumber}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          placeholder="e.g., 0244374192"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Educational History */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <h3 className="text-xl font-bold text-royal-800 mb-4">Educational History</h3>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED a)</label>
+                          <input
+                            type="text"
+                            name="school1"
+                            value={formData.school1}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <input
+                            type="text"
+                            name="class1"
+                            value={formData.class1}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED b)</label>
+                          <input
+                            type="text"
+                            name="school2"
+                            value={formData.school2}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <input
+                            type="text"
+                            name="class2"
+                            value={formData.class2}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED c)</label>
+                          <input
+                            type="text"
+                            name="school3"
+                            value={formData.school3}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <input
+                            type="text"
+                            name="class3"
+                            value={formData.class3}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">FORMER CLASS</label>
+                          <input
+                            type="text"
+                            name="formerClass"
+                            value={formData.formerClass}
+                            onChange={handleChange}
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-gray-700 font-semibold mb-2">PRESENT CLASS *</label>
+                          <select
+                            name="presentClass"
+                            value={formData.presentClass}
+                            onChange={handleChange}
+                            required
+                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors bg-white"
+                          >
+                            <option value="">Select class</option>
+                            <option value="Creche">Creche</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="Kindergarten">Kindergarten</option>
+                            <option value="Primary 1">Primary 1</option>
+                            <option value="Primary 2">Primary 2</option>
+                            <option value="Primary 3">Primary 3</option>
+                            <option value="Primary 4">Primary 4</option>
+                            <option value="Primary 5">Primary 5</option>
+                            <option value="Primary 6">Primary 6</option>
+                            <option value="JHS 1">JHS 1</option>
+                            <option value="JHS 2">JHS 2</option>
+                            <option value="JHS 3">JHS 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Child's Living Arrangement */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <h3 className="text-xl font-bold text-royal-800 mb-4">IS THE CHILD WITH:</h3>
+                    <div className="flex flex-wrap gap-6">
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="livingWith"
+                          value="bothParents"
+                          checked={formData.livingWith === 'bothParents'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-royal-600 focus:ring-royal-500"
+                        />
+                        <span className="text-gray-700 font-semibold">BOTH PARENTS</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="livingWith"
+                          value="mother"
+                          checked={formData.livingWith === 'mother'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-royal-600 focus:ring-royal-500"
+                        />
+                        <span className="text-gray-700 font-semibold">MOTHER</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="livingWith"
+                          value="father"
+                          checked={formData.livingWith === 'father'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-royal-600 focus:ring-royal-500"
+                        />
+                        <span className="text-gray-700 font-semibold">FATHER</span>
+                      </label>
+                      <label className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="livingWith"
+                          value="guardian"
+                          checked={formData.livingWith === 'guardian'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-royal-600 focus:ring-royal-500"
+                        />
+                        <span className="text-gray-700 font-semibold">GUARDIAN</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Medical Information */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <h3 className="text-xl font-bold text-royal-800 mb-4">LIST ANY MEDICAL PROBLEMS e.g. ALLERGIES</h3>
+                    <textarea
+                      name="medicalProblems"
+                      value={formData.medicalProblems}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
-                      placeholder="Enter your full name"
+                      rows={3}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
+                      placeholder="Enter any medical problems or allergies..."
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-gray-700 font-semibold mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-gray-700 font-semibold mb-2">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
-                        placeholder="+233 24 123 4567"
-                      />
-                    </div>
+                  {/* Important Note */}
+                  <div className="bg-yellow-50 border-2 border-yellow-300 rounded-xl p-4 mb-6">
+                    <p className="text-yellow-800 font-semibold">
+                      <strong>N.B:</strong> WHEN SUBMITTING THE REGISTRATION FORM, COME WITH THE CHILD
+                    </p>
                   </div>
 
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      Student Name *
+                  {/* Agreement */}
+                  <div className="border-b-2 border-gray-200 pb-6">
+                    <label className="flex items-start space-x-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="agreedToTerms"
+                        checked={formData.agreedToTerms}
+                        onChange={handleChange}
+                        required
+                        className="w-5 h-5 mt-1 text-royal-600 focus:ring-royal-500"
+                      />
+                      <span className="text-gray-700">
+                        I agree to abide by the school's regulation, pay fees promptly and promise to settle all outstanding bills in case child leaves for another school. *
+                      </span>
                     </label>
-                    <input
-                      type="text"
-                      name="studentName"
-                      value={formData.studentName}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
-                      placeholder="Enter student's full name"
-                    />
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {/* Signature and Date */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-gray-700 font-semibold mb-2">
-                        Student Age *
-                      </label>
+                      <label className="block text-gray-700 font-semibold mb-2">SIGNATURE OF PARENT / GUARDIAN *</label>
                       <input
                         type="text"
-                        name="studentAge"
-                        value={formData.studentAge}
+                        name="signature"
+                        value={formData.signature}
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
-                        placeholder="e.g., 5 years"
+                        placeholder="Enter full name"
                       />
                     </div>
-
                     <div>
-                      <label className="block text-gray-700 font-semibold mb-2">
-                        Desired Level *
-                      </label>
-                      <select
-                        name="gradeLevel"
-                        value={formData.gradeLevel}
+                      <label className="block text-gray-700 font-semibold mb-2">DATE *</label>
+                      <input
+                        type="date"
+                        name="date"
+                        value={formData.date}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors bg-white"
-                      >
-                        <option value="">Select level</option>
-                        <option value="Creche">Creche</option>
-                        <option value="Kindergarten">Kindergarten</option>
-                        <option value="Primary 1">Primary 1</option>
-                        <option value="Primary 2">Primary 2</option>
-                        <option value="Primary 3">Primary 3</option>
-                        <option value="Primary 4">Primary 4</option>
-                        <option value="Primary 5">Primary 5</option>
-                        <option value="Primary 6">Primary 6</option>
-                        <option value="JHS 1">JHS 1</option>
-                        <option value="JHS 2">JHS 2</option>
-                        <option value="JHS 3">JHS 3</option>
-                      </select>
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                      />
                     </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
-                      Additional Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
-                      placeholder="Any additional information or questions..."
-                    />
                   </div>
 
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !formData.agreedToTerms}
                     className="w-full bg-gradient-to-r from-royal-600 to-royal-700 hover:from-royal-700 hover:to-royal-800 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
+                    {isSubmitting ? 'Submitting...' : 'Submit Registration Form'}
                   </button>
                 </form>
               </div>
@@ -321,7 +693,7 @@ export default function Admissions() {
                 <div className="bg-royal-50 p-6 rounded-2xl border-2 border-royal-200">
                   <Phone className="w-8 h-8 text-royal-600 mb-3" />
                   <h4 className="font-bold text-royal-800 mb-2">Call Us</h4>
-                  <p className="text-gray-700">+233 24 123 4567</p>
+                  <p className="text-gray-700">0244588375</p>
                 </div>
                 <div className="bg-tomato-50 p-6 rounded-2xl border-2 border-tomato-200">
                   <Mail className="w-8 h-8 text-tomato-600 mb-3" />
