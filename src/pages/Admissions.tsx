@@ -206,7 +206,7 @@ export default function Admissions() {
         </div>
       </div>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Admission Process"
@@ -222,7 +222,7 @@ export default function Admissions() {
                   className="relative animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="bg-gradient-to-br from-royal-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-royal-200">
+                  <div className="bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl shadow-lg transition-colors duration-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-royal-200">
                     <div className="bg-gradient-to-br from-royal-600 to-royal-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
@@ -239,19 +239,19 @@ export default function Admissions() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="animate-slide-up">
-              <div className="bg-gradient-to-br from-tomato-50 to-amber-50 p-8 rounded-3xl shadow-lg mb-8">
-                <h2 className="text-3xl font-bold text-royal-800 mb-6">Required Documents</h2>
+              <div className="bg-gradient-to-br from-tomato-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-3xl shadow-lg mb-8 transition-colors duration-300">
+                <h2 className="text-3xl font-bold text-royal-800 dark:text-royal-300 mb-6">Required Documents</h2>
                 <ul className="space-y-4">
                   {requirements.map((req, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="w-6 h-6 text-tomato-600 mr-3 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-lg">{req}</span>
+                      <span className="text-gray-700 dark:text-gray-300 text-lg">{req}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-royal-700 to-royal-800 text-white p-8 rounded-3xl shadow-lg">
+              <div className="bg-gradient-to-br from-royal-700 to-royal-800 dark:from-gray-800 dark:to-gray-900 text-white p-8 rounded-3xl shadow-lg transition-colors duration-300">
                 <h3 className="text-2xl font-bold mb-4">Download Prospectus</h3>
                 <p className="text-gray-200 mb-6">
                   Get detailed information about our programs, fees, and facilities.
@@ -264,7 +264,7 @@ export default function Admissions() {
             </div>
 
             <div className="animate-fade-in">
-              <div className="bg-white border-2 border-royal-200 rounded-3xl shadow-lg p-8">
+              <div className="bg-white dark:bg-gray-800 border-2 border-royal-200 dark:border-gray-700 rounded-3xl shadow-lg p-8 transition-colors duration-300">
                 <div className="text-center mb-8">
                   <h2 className="text-3xl font-bold text-royal-800 mb-2">PUPILS REGISTRATION FORM</h2>
                   <p className="text-lg text-gray-600">FOUNTAIN GATE ACADEMY</p>
@@ -290,66 +290,66 @@ export default function Admissions() {
                     <h3 className="text-xl font-bold text-royal-800 mb-4">Pupil's Personal Details</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">SURNAME *</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">SURNAME *</label>
                         <input
                           type="text"
                           name="surname"
                           value={formData.surname}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">OTHER NAMES *</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">OTHER NAMES *</label>
                         <input
                           type="text"
                           name="otherNames"
                           value={formData.otherNames}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">NAMES USED FOR THE CHILD AT HOME</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">NAMES USED FOR THE CHILD AT HOME</label>
                         <input
                           type="text"
                           name="namesUsedAtHome"
                           value={formData.namesUsedAtHome}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">DATE OF BIRTH *</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">DATE OF BIRTH *</label>
                         <input
                           type="date"
                           name="dateOfBirth"
                           value={formData.dateOfBirth}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">HOME TOWN</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">HOME TOWN</label>
                         <input
                           type="text"
                           name="homeTown"
                           value={formData.homeTown}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">MOTHER TONGUE</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">MOTHER TONGUE</label>
                         <input
                           type="text"
                           name="motherTongue"
                           value={formData.motherTongue}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -360,95 +360,95 @@ export default function Admissions() {
                     <h3 className="text-xl font-bold text-royal-800 mb-4">Parent/Guardian Information</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S NAME</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">FATHER'S NAME</label>
                         <input
                           type="text"
                           name="fatherName"
                           value={formData.fatherName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S OCCUPATION</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">FATHER'S OCCUPATION</label>
                         <input
                           type="text"
                           name="fatherOccupation"
                           value={formData.fatherOccupation}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S NAME</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">MOTHER'S NAME</label>
                         <input
                           type="text"
                           name="motherName"
                           value={formData.motherName}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S OCCUPATION</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">MOTHER'S OCCUPATION</label>
                         <input
                           type="text"
                           name="motherOccupation"
                           value={formData.motherOccupation}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">GUARDIAN</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">GUARDIAN</label>
                         <input
                           type="text"
                           name="guardian"
                           value={formData.guardian}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">GUARDIAN OCCUPATION</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">GUARDIAN OCCUPATION</label>
                         <input
                           type="text"
                           name="guardianOccupation"
                           value={formData.guardianOccupation}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <div className="md:col-span-2">
-                        <label className="block text-gray-700 font-semibold mb-2">ADDRESS *</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">ADDRESS *</label>
                         <textarea
                           name="address"
                           value={formData.address}
                           onChange={handleChange}
                           required
                           rows={2}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">FATHER'S NUMBER</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">FATHER'S NUMBER</label>
                         <input
                           type="tel"
                           name="fatherNumber"
                           value={formData.fatherNumber}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           placeholder="e.g., 0500000477"
                         />
                       </div>
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">MOTHER'S NUMBER</label>
+                        <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">MOTHER'S NUMBER</label>
                         <input
                           type="tel"
                           name="motherNumber"
                           value={formData.motherNumber}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           placeholder="e.g., 0244374192"
                         />
                       </div>
@@ -461,89 +461,89 @@ export default function Admissions() {
                     <div className="space-y-4">
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED a)</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">SCHOOLS ATTENDED a)</label>
                           <input
                             type="text"
                             name="school1"
                             value={formData.school1}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">CLASS</label>
                           <input
                             type="text"
                             name="class1"
                             value={formData.class1}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED b)</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">SCHOOLS ATTENDED b)</label>
                           <input
                             type="text"
                             name="school2"
                             value={formData.school2}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">CLASS</label>
                           <input
                             type="text"
                             name="class2"
                             value={formData.class2}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">SCHOOLS ATTENDED c)</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">SCHOOLS ATTENDED c)</label>
                           <input
                             type="text"
                             name="school3"
                             value={formData.school3}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">CLASS</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">CLASS</label>
                           <input
                             type="text"
                             name="class3"
                             value={formData.class3}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">FORMER CLASS</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">FORMER CLASS</label>
                           <input
                             type="text"
                             name="formerClass"
                             value={formData.formerClass}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-gray-700 font-semibold mb-2">PRESENT CLASS *</label>
+                          <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">PRESENT CLASS *</label>
                           <select
                             name="presentClass"
                             value={formData.presentClass}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors bg-white"
+                            className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors bg-white"
                           >
                             <option value="">Select class</option>
                             <option value="Creche">Creche</option>
@@ -577,7 +577,7 @@ export default function Admissions() {
                           onChange={handleChange}
                           className="w-5 h-5 text-royal-600 focus:ring-royal-500"
                         />
-                        <span className="text-gray-700 font-semibold">BOTH PARENTS</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-semibold">BOTH PARENTS</span>
                       </label>
                       <label className="flex items-center space-x-2 cursor-pointer">
                         <input
@@ -588,7 +588,7 @@ export default function Admissions() {
                           onChange={handleChange}
                           className="w-5 h-5 text-royal-600 focus:ring-royal-500"
                         />
-                        <span className="text-gray-700 font-semibold">MOTHER</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-semibold">MOTHER</span>
                       </label>
                       <label className="flex items-center space-x-2 cursor-pointer">
                         <input
@@ -599,7 +599,7 @@ export default function Admissions() {
                           onChange={handleChange}
                           className="w-5 h-5 text-royal-600 focus:ring-royal-500"
                         />
-                        <span className="text-gray-700 font-semibold">FATHER</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-semibold">FATHER</span>
                       </label>
                       <label className="flex items-center space-x-2 cursor-pointer">
                         <input
@@ -610,7 +610,7 @@ export default function Admissions() {
                           onChange={handleChange}
                           className="w-5 h-5 text-royal-600 focus:ring-royal-500"
                         />
-                        <span className="text-gray-700 font-semibold">GUARDIAN</span>
+                        <span className="text-gray-700 dark:text-gray-300 font-semibold">GUARDIAN</span>
                       </label>
                     </div>
                   </div>
@@ -623,7 +623,7 @@ export default function Admissions() {
                       value={formData.medicalProblems}
                       onChange={handleChange}
                       rows={3}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors resize-none"
                       placeholder="Enter any medical problems or allergies..."
                     />
                   </div>
@@ -646,7 +646,7 @@ export default function Admissions() {
                         required
                         className="w-5 h-5 mt-1 text-royal-600 focus:ring-royal-500"
                       />
-                      <span className="text-gray-700">
+                      <span className="text-gray-700 dark:text-gray-300">
                         I agree to abide by the school's regulation, pay fees promptly and promise to settle all outstanding bills in case child leaves for another school. *
                       </span>
                     </label>
@@ -655,26 +655,26 @@ export default function Admissions() {
                   {/* Signature and Date */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-gray-700 font-semibold mb-2">SIGNATURE OF PARENT / GUARDIAN *</label>
+                      <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">SIGNATURE OF PARENT / GUARDIAN *</label>
                       <input
                         type="text"
                         name="signature"
                         value={formData.signature}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                         placeholder="Enter full name"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 font-semibold mb-2">DATE *</label>
+                      <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">DATE *</label>
                       <input
                         type="date"
                         name="date"
                         value={formData.date}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                        className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
                       />
                     </div>
                   </div>
@@ -693,12 +693,12 @@ export default function Admissions() {
                 <div className="bg-royal-50 p-6 rounded-2xl border-2 border-royal-200">
                   <Phone className="w-8 h-8 text-royal-600 mb-3" />
                   <h4 className="font-bold text-royal-800 mb-2">Call Us</h4>
-                  <p className="text-gray-700">0244588375</p>
+                  <p className="text-gray-700 dark:text-gray-300">0244588375</p>
                 </div>
                 <div className="bg-tomato-50 p-6 rounded-2xl border-2 border-tomato-200">
                   <Mail className="w-8 h-8 text-tomato-600 mb-3" />
                   <h4 className="font-bold text-tomato-800 mb-2">Email Us</h4>
-                  <p className="text-gray-700">admissions@fountaingate.edu.gh</p>
+                  <p className="text-gray-700 dark:text-gray-300">admissions@fountaingate.edu.gh</p>
                 </div>
               </div>
             </div>

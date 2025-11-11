@@ -81,7 +81,7 @@ export default function NewsEvents() {
         </div>
       </div>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Latest News"
@@ -97,7 +97,7 @@ export default function NewsEvents() {
               {news.map((post, index) => (
                 <div
                   key={post.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 cursor-pointer animate-scale-in"
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 cursor-pointer animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onClick={() => setSelectedNews(post)}
                 >
@@ -115,10 +115,10 @@ export default function NewsEvents() {
                       <Calendar className="w-4 h-4 mr-2" />
                       {formatDate(post.published_date)}
                     </div>
-                    <h3 className="text-xl font-bold text-royal-800 mb-3 line-clamp-2">
+                    <h3 className="text-xl font-bold text-royal-800 dark:text-royal-300 mb-3 line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">{post.excerpt}</p>
                     <button className="text-royal-600 font-semibold hover:text-royal-700 transition-colors flex items-center">
                       Read More
                       <span className="ml-2">→</span>
@@ -131,7 +131,7 @@ export default function NewsEvents() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Upcoming Events"
@@ -147,7 +147,7 @@ export default function NewsEvents() {
               {events.map((event, index) => (
                 <div
                   key={event.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-royal-100 animate-slide-up"
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-royal-100 dark:border-gray-700 animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-3">
@@ -162,24 +162,24 @@ export default function NewsEvents() {
                     )}
                     <div className={`p-6 ${event.image_url ? 'md:col-span-2' : 'md:col-span-3'}`}>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="bg-tomato-100 px-4 py-2 rounded-xl">
-                          <p className="text-tomato-700 font-bold text-lg">
+                        <div className="bg-tomato-100 dark:bg-gray-700 px-4 py-2 rounded-xl transition-colors duration-300">
+                          <p className="text-tomato-700 dark:text-tomato-300 font-bold text-lg">
                             {new Date(event.event_date).getDate()}
                           </p>
-                          <p className="text-tomato-600 text-sm">
+                          <p className="text-tomato-600 dark:text-tomato-400 text-sm">
                             {new Date(event.event_date).toLocaleDateString('en-US', { month: 'short' })}
                           </p>
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold text-royal-800 mb-3">{event.title}</h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{event.description}</p>
+                      <h3 className="text-2xl font-bold text-royal-800 dark:text-royal-300 mb-3">{event.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{event.description}</p>
                       <div className="space-y-2">
-                        <div className="flex items-center text-gray-600">
-                          <Calendar className="w-5 h-5 mr-3 text-royal-600" />
+                        <div className="flex items-center text-gray-600 dark:text-gray-400">
+                          <Calendar className="w-5 h-5 mr-3 text-royal-600 dark:text-royal-400" />
                           {formatDate(event.event_date)}
                         </div>
-                        <div className="flex items-center text-gray-600">
-                          <MapPin className="w-5 h-5 mr-3 text-royal-600" />
+                        <div className="flex items-center text-gray-600 dark:text-gray-400">
+                          <MapPin className="w-5 h-5 mr-3 text-royal-600 dark:text-royal-400" />
                           {event.location}
                         </div>
                       </div>
@@ -190,8 +190,8 @@ export default function NewsEvents() {
             </div>
           ) : (
             <div className="text-center py-12">
-              <Calendar className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600 text-lg">No upcoming events at the moment. Check back soon!</p>
+              <Calendar className="w-16 h-16 text-gray-400 dark:text-gray-500 mx-auto mb-4" />
+              <p className="text-gray-600 dark:text-gray-400 text-lg">No upcoming events at the moment. Check back soon!</p>
             </div>
           )}
         </div>
@@ -203,7 +203,7 @@ export default function NewsEvents() {
           onClick={() => setSelectedNews(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-scale-in"
+            className="bg-white dark:bg-gray-800 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-scale-in transition-colors duration-300"
             onClick={(e) => e.stopPropagation()}
           >
             {selectedNews.image_url && (
@@ -220,8 +220,8 @@ export default function NewsEvents() {
                 <Newspaper className="w-4 h-4 mr-2" />
                 {formatDate(selectedNews.published_date)}
               </div>
-              <h2 className="text-3xl font-bold text-royal-800 mb-6">{selectedNews.title}</h2>
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <h2 className="text-3xl font-bold text-royal-800 dark:text-royal-300 mb-6">{selectedNews.title}</h2>
+              <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed">
                 {selectedNews.content}
               </div>
               <button

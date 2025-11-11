@@ -72,7 +72,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2 space-y-8">
@@ -80,54 +80,54 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-royal-800 mb-8">Get In Touch</h2>
 
                 <div className="space-y-6">
-                  <div className="flex items-start space-x-4 bg-gradient-to-br from-royal-50 to-blue-50 p-6 rounded-2xl border-2 border-royal-200 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start space-x-4 bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-royal-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
                     <div className="bg-royal-600 p-3 rounded-xl flex-shrink-0">
                       <MapPin className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-royal-800 mb-2">Address</h3>
-                      <p className="text-gray-700">
+                      <h3 className="font-bold text-royal-800 dark:text-royal-300 mb-2">Address</h3>
+                      <p className="text-gray-700 dark:text-gray-300">
                       Antiaku-Laststop, Accra, Ghana
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4 bg-gradient-to-br from-tomato-50 to-amber-50 p-6 rounded-2xl border-2 border-tomato-200 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start space-x-4 bg-gradient-to-br from-tomato-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-tomato-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
                     <div className="bg-tomato-600 p-3 rounded-xl flex-shrink-0">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-tomato-800 mb-2">Phone</h3>
-                      <p className="text-gray-700">0244588375</p>
+                      <h3 className="font-bold text-tomato-800 dark:text-tomato-300 mb-2">Phone</h3>
+                      <p className="text-gray-700 dark:text-gray-300">0244588375</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4 bg-gradient-to-br from-royal-50 to-blue-50 p-6 rounded-2xl border-2 border-royal-200 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start space-x-4 bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-royal-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
                     <div className="bg-royal-600 p-3 rounded-xl flex-shrink-0">
                       <Mail className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-royal-800 mb-2">Email</h3>
-                      <p className="text-gray-700">info@fountaingate.edu.gh</p>
-                      <p className="text-gray-700">admissions@fountaingate.edu.gh</p>
+                      <h3 className="font-bold text-royal-800 dark:text-royal-300 mb-2">Email</h3>
+                      <p className="text-gray-700 dark:text-gray-300">info@fountaingate.edu.gh</p>
+                      <p className="text-gray-700 dark:text-gray-300">admissions@fountaingate.edu.gh</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-4 bg-gradient-to-br from-tomato-50 to-amber-50 p-6 rounded-2xl border-2 border-tomato-200 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-start space-x-4 bg-gradient-to-br from-tomato-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-6 rounded-2xl border-2 border-tomato-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
                     <div className="bg-tomato-600 p-3 rounded-xl flex-shrink-0">
                       <Clock className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-tomato-800 mb-2">School Hours</h3>
-                      <p className="text-gray-700">Monday - Friday</p>
-                      <p className="text-gray-700">7:00 AM - 3:15 PM</p>
+                      <h3 className="font-bold text-tomato-800 dark:text-tomato-300 mb-2">School Hours</h3>
+                      <p className="text-gray-700 dark:text-gray-300">Monday - Friday</p>
+                      <p className="text-gray-700 dark:text-gray-300">7:00 AM - 3:15 PM</p>
                       <p className="text-gray-700 text-sm mt-2">Office Hours: 7:00 AM - 4:00 PM</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <h3 className="font-bold text-royal-800 mb-4 text-xl">Follow Us</h3>
+                  <h3 className="font-bold text-royal-800 dark:text-royal-300 mb-4 text-xl">Follow Us</h3>
                   <div className="flex space-x-4">
                     <a
                       href="https://web.facebook.com/THEGREATFOGA#"
@@ -174,7 +174,7 @@ export default function Contact() {
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
+                    <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                       Full Name *
                     </label>
                     <input
@@ -183,13 +183,13 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 dark:focus:border-royal-400 focus:outline-none transition-colors"
                       placeholder="Enter your full name"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
+                    <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                       Email Address *
                     </label>
                     <input
@@ -198,13 +198,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 dark:focus:border-royal-400 focus:outline-none transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
+                    <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -213,13 +213,13 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-royal-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-xl focus:border-royal-500 dark:focus:border-royal-400 focus:outline-none transition-colors"
                       placeholder="+233 XX XXX XXXX"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-gray-700 font-semibold mb-2">
+                    <label className="block text-gray-700 dark:text-gray-300 font-semibold mb-2">
                       Message *
                     </label>
                     <textarea

@@ -49,31 +49,31 @@ export default function About() {
         </div>
       </div>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-            <div className="bg-gradient-to-br from-royal-50 to-blue-50 p-10 rounded-3xl shadow-lg animate-slide-up">
+            <div className="bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-lg animate-slide-up transition-colors duration-300">
               <div className="bg-royal-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-royal-800 mb-4">Our Mission</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <h2 className="text-3xl font-bold text-royal-800 dark:text-royal-300 mb-4">Our Mission</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               To Holistically Equip The Next Generation Of Leaders With Hard work, Innovation, Confidence And Above All The Fear Of God.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-tomato-50 to-red-50 p-10 rounded-3xl shadow-lg animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <div className="bg-gradient-to-br from-tomato-50 to-red-50 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-lg animate-slide-up transition-colors duration-300" style={{ animationDelay: '0.1s' }}>
               <div className="bg-tomato-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                 <Eye className="w-8 h-8 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-tomato-800 mb-4">Our Vision</h2>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <h2 className="text-3xl font-bold text-tomato-800 dark:text-tomato-300 mb-4">Our Vision</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               To Become A Household Name In The Provision Of Quality And Affordable Education In Ghana.
               </p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl shadow-lg animate-fade-in">
+          <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-lg animate-fade-in transition-colors duration-300">
             <div className="flex items-center mb-6">
               <div className="bg-royal-600 w-16 h-16 rounded-2xl flex items-center justify-center mr-4">
                 <History className="w-8 h-8 text-white" />
@@ -139,7 +139,7 @@ export default function About() {
       </section>
       */}
 
-      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 dark:from-gray-800 dark:to-gray-900 text-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex justify-center mb-6">
@@ -164,10 +164,10 @@ export default function About() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+                className="bg-white/10 dark:bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-white/20 dark:border-gray-600 hover:bg-white/20 dark:hover:bg-gray-600/50 transition-all duration-300 hover:scale-105"
               >
-                <h3 className="text-2xl font-bold text-tomato-400 mb-3">{value.title}</h3>
-                <p className="text-gray-200">{value.desc}</p>
+                <h3 className="text-2xl font-bold text-tomato-400 dark:text-tomato-300 mb-3">{value.title}</h3>
+                <p className="text-gray-200 dark:text-gray-300">{value.desc}</p>
               </div>
             ))}
           </div>

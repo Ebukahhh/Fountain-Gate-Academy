@@ -224,14 +224,14 @@ export default function Academics() {
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-4xl animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Academics</h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 dark:text-gray-300 max-w-3xl mx-auto">
               A comprehensive educational journey from Creche to JHS (Ages 1 year and above)
             </p>
           </div>
         </div>
       </div>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Our Academic Programs"
@@ -252,15 +252,15 @@ export default function Academics() {
                       <div className={`bg-gradient-to-br ${program.color} w-20 h-20 rounded-2xl flex items-center justify-center mb-6`}>
                         <Icon className="w-10 h-10 text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold text-royal-800 mb-4">{program.title}</h2>
-                      <p className="text-lg text-gray-700 mb-6">{program.description}</p>
+                      <h2 className="text-3xl font-bold text-royal-800 dark:text-royal-300 mb-4">{program.title}</h2>
+                      <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">{program.description}</p>
 
                       <h3 className="text-xl font-bold text-royal-700 mb-4">Key Features:</h3>
                       <ul className="space-y-3">
                         {program.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start">
                             <span className="inline-block w-2 h-2 bg-tomato-500 rounded-full mr-3 mt-2 flex-shrink-0" />
-                            <span className="text-gray-700">{feature}</span>
+                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                           </li>
                         ))}
                       </ul>
@@ -268,20 +268,20 @@ export default function Academics() {
 
                     <div>
                       <h3 className="text-xl font-bold text-royal-700 mb-4">Curriculum Highlights:</h3>
-                      <div className="bg-white rounded-2xl p-6 shadow-md">
+                      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md transition-colors duration-300">
                         <ul className="space-y-3">
                           {program.curriculum.map((item, idx) => (
                             <li key={idx} className="flex items-start">
                               <span className="inline-block w-2 h-2 bg-royal-500 rounded-full mr-3 mt-2 flex-shrink-0" />
-                              <span className="text-gray-700">{item}</span>
+                              <span className="text-gray-700 dark:text-gray-300">{item}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <div className="mt-6 bg-white rounded-2xl p-6 shadow-md">
+                      <div className="mt-6 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md transition-colors duration-300">
                         <h4 className="font-bold text-royal-700 mb-3">Class Schedule</h4>
-                        <div className="space-y-2 text-gray-700">
+                        <div className="space-y-2 text-gray-700 dark:text-gray-300">
                           <p><span className="font-semibold">School Hours:</span> 7:00 AM - 3:15 PM</p>
                           <p><span className="font-semibold">Break Time:</span> {program.breakTime || '9:45 AM - 10:25 AM'}</p>
                           <p><span className="font-semibold">Lunch:</span> 12:45 PM - 1:30 PM</p>
@@ -296,7 +296,7 @@ export default function Academics() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Our Facilities"
@@ -309,7 +309,7 @@ export default function Academics() {
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-scale-in"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg transition-colors duration-300 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="bg-gradient-to-br from-royal-600 to-royal-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
@@ -324,26 +324,26 @@ export default function Academics() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 dark:from-gray-800 dark:to-gray-900 text-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold mb-6">Academic Excellence</h2>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="text-xl text-gray-200 dark:text-gray-300 mb-8">
               Our students consistently achieve outstanding results in the Basic Education Certificate Examination (BECE)
               and excel in their future academic pursuits.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="bg-white/10 dark:bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-white/20 dark:border-gray-600">
                 <p className="text-5xl font-bold text-tomato-400 mb-2">98%</p>
-                <p className="text-gray-200">BECE Pass Rate</p>
+                <p className="text-gray-200 dark:text-gray-300">BECE Pass Rate</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="bg-white/10 dark:bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-white/20 dark:border-gray-600">
                 <p className="text-5xl font-bold text-tomato-400 mb-2">85%</p>
-                <p className="text-gray-200">Category A Schools</p>
+                <p className="text-gray-200 dark:text-gray-300">Category A Schools</p>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
+              <div className="bg-white/10 dark:bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-white/20 dark:border-gray-600">
                 <p className="text-5xl font-bold text-tomato-400 mb-2">10+</p>
-                <p className="text-gray-200">Awards Won</p>
+                <p className="text-gray-200 dark:text-gray-300">Awards Won</p>
               </div>
             </div>
             <button className="bg-tomato-500 hover:bg-tomato-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg">
