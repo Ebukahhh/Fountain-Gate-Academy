@@ -172,7 +172,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="bg-royal-50 dark:bg-gray-800 px-6 py-3 rounded-xl border-2 border-royal-200 dark:border-gray-700 transition-colors duration-300">
-                  <p className="text-2xl font-bold text-royal-700 dark:text-royal-300">5+</p>
+                  <p className="text-2xl font-bold text-royal-700 dark:text-royal-300">26+</p>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Years of Excellence</p>
                 </div>
                 <div className="bg-tomato-50 dark:bg-gray-800 px-6 py-3 rounded-xl border-2 border-tomato-200 dark:border-gray-700 transition-colors duration-300">
