@@ -216,7 +216,7 @@ CREATE INDEX idx_stats_order ON homepage_stats(order_index);
 -- Insert default stats
 INSERT INTO homepage_stats (value, label, order_index) VALUES
 ('15+', 'Years of Excellence', 0),
-('500+', 'Happy Students', 1),
+('1000+', 'Happy Students', 1),
 ('98%', 'Success Rate', 2);
 
 -- =====================================================
