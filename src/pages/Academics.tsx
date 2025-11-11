@@ -1,10 +1,7 @@
 import { Baby, BookOpen, GraduationCap, Clock, Users, Award } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import academicpic1 from '../assets/images/academicpic1.jpeg';
-import academicpic2 from '../assets/images/academicpic2.jpeg';
-import academicpic3 from '../assets/images/academicpic3.jpeg';
-import academicpic4 from '../assets/images/academicpic4.jpeg';
-import academicpic5 from '../assets/images/academicpic5.jpeg';
+// kept only the main hero image; other academic images removed to simplify hero
 
 const programs = [
   {
@@ -154,77 +151,17 @@ const facilities = [
 export default function Academics() {
   return (
     <div className="animate-fade-in">
-      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+      <div className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-1 h-full">
-          <div className="row-span-2 hidden md:block">
-            <img
-              src={academicpic1}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="hidden md:block">
-            <img
-              src={academicpic2}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="hidden md:block">
-            <img
-              src={academicpic3}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="hidden md:block">
-            <img
-              src={academicpic4}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="hidden md:block">
-            <img
-              src={academicpic5}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          {/* Mobile view - show all images in a row */}
-          <div className="md:hidden flex h-full">
-            <img
-              src={academicpic1}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-            <img
-              src={academicpic2}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-            <img
-              src={academicpic3}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-            <img
-              src={academicpic4}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-            <img
-              src={academicpic5}
-              alt="Academics at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        <img
+          src={academicpic1}
+          alt="Academics at Fountain Gate Academy"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-4xl animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Academics</h1>
-            <p className="text-xl text-gray-200 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               A comprehensive educational journey from Creche to JHS (Ages 1 year and above)
             </p>
           </div>

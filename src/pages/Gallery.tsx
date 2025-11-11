@@ -3,7 +3,6 @@ import { Image as ImageIcon, Video, X } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import { supabase } from '../lib/supabase';
 import gallery1 from '../assets/images/gallery1.jpeg';
-import gallery2 from '../assets/images/gallery2.jpeg';
 import photo_1 from '../assets/images/photo_1.jpg';
 import photo_2 from '../assets/images/photo_2.jpg';
 import photo_3 from '../assets/images/photo_3.jpg';
@@ -81,24 +80,13 @@ export default function Gallery() {
 
   return (
     <div className="animate-fade-in">
-      <div className="relative h-[400px] md:h-[500px] overflow-hidden">
+      <div className="relative h-[300px] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-royal-900/80 to-royal-800/60 z-10" />
-        <div className="grid grid-cols-2 gap-1 h-full">
-          <div>
-            <img
-              src={gallery1}
-              alt="Gallery at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <img
-              src={gallery2}
-              alt="Gallery at Fountain Gate Academy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        <img
+          src={gallery1}
+          alt="Gallery at Fountain Gate Academy"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-4xl animate-slide-up">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Gallery</h1>
