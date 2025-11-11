@@ -40,6 +40,7 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-tomato-400 dark:text-tomato-300 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300 dark:text-gray-400">Antiaku-Laststop, Accra, Ghana</span>
+                <span className="text-gray-300 dark:text-gray-400"> Sapeiman -Amasaman, Accra, Ghana</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-tomato-400 dark:text-tomato-300 flex-shrink-0" />
@@ -47,7 +48,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-tomato-400 dark:text-tomato-300 flex-shrink-0" />
-                <span className="text-gray-300 dark:text-gray-400">FountainGate@gmail.com</span>
+                <span className="text-gray-300 dark:text-gray-400">Greatfoga1@gmail.com</span>
               </li>
             </ul>
           </div>
