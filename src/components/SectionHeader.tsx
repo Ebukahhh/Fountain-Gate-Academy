@@ -7,11 +7,11 @@ interface SectionHeaderProps {
 export default function SectionHeader({ title, subtitle, centered = true }: SectionHeaderProps) {
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''}`}>
-      <h2 className="text-4xl md:text-5xl font-bold text-royal-800 mb-4 animate-slide-up">
+      <h2 className="text-4xl md:text-5xl font-bold text-royal-800 dark:text-royal-300 mb-4 animate-slide-up">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto animate-fade-in">
+        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in">
           {subtitle}
         </p>
       )}

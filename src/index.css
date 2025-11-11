@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-nunito bg-white text-gray-800;
+    @apply font-nunito bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {

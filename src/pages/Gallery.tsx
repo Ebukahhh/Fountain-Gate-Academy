@@ -78,7 +78,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
             <div className="flex flex-wrap gap-3 justify-center">
@@ -221,7 +221,7 @@ export default function Gallery() {
         </div>
       )}
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Capture the Moments"
@@ -229,24 +229,24 @@ export default function Gallery() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-royal-50 to-blue-50 p-8 rounded-2xl border-2 border-royal-200">
+            <div className="bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-royal-200 dark:border-gray-700 transition-colors duration-300">
               <ImageIcon className="w-12 h-12 text-royal-600 mb-4" />
-              <h3 className="text-2xl font-bold text-royal-800 mb-3">Academic Life</h3>
-              <p className="text-gray-700">
+              <h3 className="text-2xl font-bold text-royal-800 dark:text-royal-300 mb-3">Academic Life</h3>
+              <p className="text-gray-700 dark:text-gray-300">
                 See our students engaged in learning activities, experiments, and classroom experiences.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-tomato-50 to-amber-50 p-8 rounded-2xl border-2 border-tomato-200">
+            <div className="bg-gradient-to-br from-tomato-50 to-amber-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-tomato-200 dark:border-gray-700 transition-colors duration-300">
               <Video className="w-12 h-12 text-tomato-600 mb-4" />
-              <h3 className="text-2xl font-bold text-tomato-800 mb-3">Events & Activities</h3>
-              <p className="text-gray-700">
+              <h3 className="text-2xl font-bold text-tomato-800 dark:text-tomato-300 mb-3">Events & Activities</h3>
+              <p className="text-gray-700 dark:text-gray-300">
                 Highlights from our sports days, cultural celebrations, and special events.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-royal-50 to-blue-50 p-8 rounded-2xl border-2 border-royal-200">
+            <div className="bg-gradient-to-br from-royal-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-2xl border-2 border-royal-200 dark:border-gray-700 transition-colors duration-300">
               <ImageIcon className="w-12 h-12 text-royal-600 mb-4" />
-              <h3 className="text-2xl font-bold text-royal-800 mb-3">Campus Life</h3>
-              <p className="text-gray-700">
+              <h3 className="text-2xl font-bold text-royal-800 dark:text-royal-300 mb-3">Campus Life</h3>
+              <p className="text-gray-700 dark:text-gray-300">
                 Explore our facilities, classrooms, and the beautiful campus environment.
               </p>
             </div>

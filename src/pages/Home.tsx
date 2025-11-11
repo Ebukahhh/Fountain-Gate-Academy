@@ -140,7 +140,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Welcome to Our School"
@@ -156,32 +156,32 @@ export default function Home() {
               />
             </div>
             <div className="space-y-6 animate-fade-in">
-              <h3 className="text-3xl font-bold text-royal-800">
+              <h3 className="text-3xl font-bold text-royal-800 dark:text-royal-300">
                 Building Tomorrow's Leaders Today
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 At Fountain Gate Academy, we are committed to providing a nurturing environment
                 where young minds flourish and character is built on strong foundations. Our
                 comprehensive educational approach combines academic excellence with moral values,
                 preparing students for success in life.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 From our Creche program through JHS, we offer a continuous
                 educational journey that develops critical thinking, creativity, and leadership
                 skills in every child from ages 1 year and above.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <div className="bg-royal-50 px-6 py-3 rounded-xl border-2 border-royal-200">
-                  <p className="text-2xl font-bold text-royal-700">5+</p>
-                  <p className="text-sm text-gray-600">Years of Excellence</p>
+                <div className="bg-royal-50 dark:bg-gray-800 px-6 py-3 rounded-xl border-2 border-royal-200 dark:border-gray-700 transition-colors duration-300">
+                  <p className="text-2xl font-bold text-royal-700 dark:text-royal-300">5+</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Years of Excellence</p>
                 </div>
-                <div className="bg-tomato-50 px-6 py-3 rounded-xl border-2 border-tomato-200">
-                  <p className="text-2xl font-bold text-tomato-700">500+</p>
-                  <p className="text-sm text-gray-600">Happy Students</p>
+                <div className="bg-tomato-50 dark:bg-gray-800 px-6 py-3 rounded-xl border-2 border-tomato-200 dark:border-gray-700 transition-colors duration-300">
+                  <p className="text-2xl font-bold text-tomato-700 dark:text-tomato-300">500+</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Happy Students</p>
                 </div>
-                <div className="bg-royal-50 px-6 py-3 rounded-xl border-2 border-royal-200">
-                  <p className="text-2xl font-bold text-royal-700">98%</p>
-                  <p className="text-sm text-gray-600">Success Rate</p>
+                <div className="bg-royal-50 dark:bg-gray-800 px-6 py-3 rounded-xl border-2 border-royal-200 dark:border-gray-700 transition-colors duration-300">
+                  <p className="text-2xl font-bold text-royal-700 dark:text-royal-300">98%</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Success Rate</p>
                 </div>
               </div>
             </div>
@@ -193,14 +193,14 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 animate-scale-in"
+                  className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="bg-gradient-to-br from-royal-600 to-royal-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-royal-800 mb-3">{feature.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h4 className="text-xl font-bold text-royal-800 dark:text-royal-300 mb-3">{feature.title}</h4>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -208,7 +208,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-royal-700 to-royal-800 dark:from-gray-800 dark:to-gray-900 text-white transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-slide-up">
             Ready to Join Our Community?
