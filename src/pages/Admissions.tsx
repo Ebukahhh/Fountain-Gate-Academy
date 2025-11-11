@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FileText, CheckCircle, Calendar, UserPlus, Download, Phone, Mail } from 'lucide-react';
+import { FileText, CheckCircle, Calendar, UserPlus, Phone, Mail } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import { supabase } from '../lib/supabase';
 import admissionImage from '../assets/images/admission.jpeg';
@@ -28,12 +28,8 @@ const admissionSteps = [
 ];
 
 const requirements = [
-  'Birth certificate of the child',
-  'Recent passport-sized photographs (4 copies)',
-  'Immunization records',
   'Previous school report cards (if applicable)',
-  'Parent/Guardian identification',
-  'Proof of residence'
+  'Parent/Guardian identification'
 ];
 
 export default function Admissions() {
@@ -249,17 +245,6 @@ export default function Admissions() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="bg-gradient-to-br from-royal-700 to-royal-800 dark:from-gray-800 dark:to-gray-900 text-white p-8 rounded-3xl shadow-lg transition-colors duration-300">
-                <h3 className="text-2xl font-bold mb-4">Download Prospectus</h3>
-                <p className="text-gray-200 mb-6">
-                  Get detailed information about our programs, fees, and facilities.
-                </p>
-                <button className="bg-tomato-500 hover:bg-tomato-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2">
-                  <Download className="w-5 h-5" />
-                  <span>Download Prospectus (PDF)</span>
-                </button>
               </div>
             </div>
 
