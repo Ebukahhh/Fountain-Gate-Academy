@@ -4,6 +4,17 @@ import SectionHeader from '../components/SectionHeader';
 import { supabase } from '../lib/supabase';
 import gallery1 from '../assets/images/gallery1.jpeg';
 import gallery2 from '../assets/images/gallery2.jpeg';
+import photo_1 from '../assets/images/photo_1.jpg';
+import photo_2 from '../assets/images/photo_2.jpg';
+import photo_3 from '../assets/images/photo_3.jpg';
+import photo_4 from '../assets/images/photo_4.jpg';
+import photo_5 from '../assets/images/photo_5.jpg';
+import photo_6 from '../assets/images/photo_6.jpg';
+import photo_7 from '../assets/images/photo_7.jpg';
+import photo_8 from '../assets/images/photo_8.jpg';
+import photo_9 from '../assets/images/photo_9.jpg';
+import photo_10 from '../assets/images/photo_10.jpg';
+import photo_11 from '../assets/images/photo_11.jpg';
 
 interface GalleryItem {
   id: string;
@@ -20,6 +31,26 @@ export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
+  const staticItems: GalleryItem[] = [
+    photo_1,
+    photo_2,
+    photo_3,
+    photo_4,
+    photo_5,
+    photo_6,
+    photo_7,
+    photo_8,
+    photo_9,
+    photo_10,
+    photo_11,
+  ].map((src, i) => ({
+    id: `static-${i + 1}`,
+    title: `Photo ${i + 1}`,
+    media_url: src,
+    media_type: 'photo' as const,
+    category: 'highlights',
+  }));
+
   useEffect(() => {
     fetchGalleryItems();
   }, []);
@@ -32,7 +63,7 @@ export default function Gallery() {
         .order('created_at', { ascending: false });
 
       if (error) throw error;
-      if (data) setItems(data);
+      if (data) setItems([...staticItems, ...data]);
     } catch (error) {
       console.error('Error fetching gallery items:', error);
     } finally {
@@ -220,6 +251,8 @@ export default function Gallery() {
           </div>
         </div>
       )}
+
+      {/* Static highlights removed — images are now integrated into the dynamic gallery items */}
 
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
